@@ -415,7 +415,8 @@ final Runnable drawRoute = new Runnable(){
 
 
             String route = currentRoute;
-            URL builder = new URL("https://api.wmata.com/Bus.svc/json/jRouteDetails?RouteID="+route);
+          //  URL builder = new URL("https://api.wmata.com/Bus.svc/json/jRouteDetails?RouteID="+route);
+            URL builder = new URL("http://www.brianmerel.me/Routes/"+route+".json");
 
 
             httpURLConnection = (HttpURLConnection) builder.openConnection();
@@ -651,9 +652,9 @@ final Runnable drawRoute = new Runnable(){
 
         try {
             HttpURLConnection httpURLConnection;
-          //  String page ="http://www.brianmerel.me/busPosition.json";
-            // URL builder = new URL(page);
-            URL builder = new URL("https://api.wmata.com/Bus.svc/json/jBusPositions");
+            String page ="http://www.brianmerel.me/busPosition.json";
+             URL builder = new URL(page);
+            //URL builder = new URL("https://api.wmata.com/Bus.svc/json/jBusPositions");
 
             httpURLConnection = (HttpURLConnection) builder.openConnection();
             httpURLConnection.setRequestMethod("GET");
